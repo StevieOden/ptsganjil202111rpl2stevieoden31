@@ -1,11 +1,15 @@
-package com.example.thirdact;
+package com.example.thirdact.models;
 
-public class SportModel {
+import io.realm.RealmObject;
 
+public class SportModel extends RealmObject {
     private String strSport;
     private String strSportDescription;
     private String strFormat;
     private String strSportThumb;
+
+    public SportModel() {
+    }
 
     public SportModel(String strSport, String strSportDescription, String strFormat, String strSportThumb) {
         this.strSport = strSport;

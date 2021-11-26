@@ -1,6 +1,5 @@
-package com.example.thirdact;
+package com.example.thirdact.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -8,11 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.thirdact.DetailActivity;
+import com.example.thirdact.R;
+import com.example.thirdact.models.SportModel;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -57,13 +59,6 @@ public class SportAdapter extends RecyclerView.Adapter<SportAdapter.MyViewHolder
                 view.getContext().startActivity(intent);
             }
         });
-        holder.itemcv.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-
-            return true;
-            }
-        });
     }
 
     @Override
@@ -84,4 +79,5 @@ public class SportAdapter extends RecyclerView.Adapter<SportAdapter.MyViewHolder
             itemcv = itemView.findViewById(R.id.item_cv);
         }
     }
-}
+    }
+

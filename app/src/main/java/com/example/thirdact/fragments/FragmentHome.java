@@ -1,17 +1,14 @@
-package com.example.thirdact;
+package com.example.thirdact.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.example.thirdact.R;
+import com.example.thirdact.adapter.SportAdapter;
+import com.example.thirdact.models.SportModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,6 +30,7 @@ import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
 public class FragmentHome extends Fragment{
+
     private RecyclerView list_item;
     private ArrayList<SportModel> arlist;
     private SportAdapter sportAdapter;
@@ -46,9 +47,9 @@ public class FragmentHome extends Fragment{
         super.onViewCreated(view, savedInstanceState);
         getData();
     }
-    void getData(){
 
-        AndroidNetworking.get("https://www.thesportsdb.com/api/v1/json/1/all_sports.php")
+    void getData(){
+        AndroidNetworking.get("https://www.thesportsdb.com/api/v1/json/2/all_sports.php")
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
